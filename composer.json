@@ -1,0 +1,45 @@
+{
+    "name": "sunaoka/composer-vcs-export-plugin",
+    "description": "Exports Composer VCS repositories to vendor directories applying .gitattributes export-ignore rules.",
+    "keywords": ["php", "composer", "plugin", "vcs", "repositories", ".gitattributes", "export-ignore"],
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sunaoka",
+            "email": "sunaoka@pocari.org"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "composer-plugin-api": "^2.0",
+        "symfony/filesystem": "^5.0 || ^6.0 || ^7.0",
+        "symfony/process": "^5.0 || ^6.0 || ^7.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.8.5",
+        "phpunit/phpunit": "^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sunaoka\\Composer\\Vcs\\Export\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "class": "Sunaoka\\Composer\\Vcs\\Export\\Plugin",
+        "branch-alias": {
+            "dev-main": "1.0.0-dev"
+        }
+    }
+}

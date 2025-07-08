@@ -1,0 +1,12 @@
+includes:
+    - /composer/vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - /composer/vendor/phpstan/phpstan-phpunit/extension.neon
+    - /composer/vendor/phpstan/phpstan-mockery/extension.neon
+
+parameters:
+
+    level: max
+
+    paths:
+        - src/
+        - tests/
