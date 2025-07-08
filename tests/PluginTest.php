@@ -132,6 +132,33 @@ class PluginTest extends TestCase
         self::assertSame('', trim($io->getOutput()));
     }
 
+    public function testMetaPackage(): void
+    {
+        $package = new CompletePackage('vendor-name/package-name', '1.0.0.0', '1.0.0');
+        $package->setType('metapackage');
+        $package->setSourceType('git');
+
+        $event = new PackageEvent(
+            PackageEvents::POST_PACKAGE_INSTALL,
+            $this->composer,
+            new NullIO(),
+            true,
+            new ArrayRepository(),
+            [new InstallOperation($package)],
+            new InstallOperation($package)
+        );
+
+        $io = new BufferIO();
+        $plugin = new Plugin();
+        $plugin->activate($this->composer, $io);
+        $plugin->onPostPackageInstall($event);
+
+        self::assertSame('', trim($io->getOutput()));
+
+        $plugin->deactivate($this->composer, $io);
+        $plugin->uninstall($this->composer, $io);
+    }
+
     public function testGetSubscribedEvents(): void
     {
         self::assertCount(2, Plugin::getSubscribedEvents());

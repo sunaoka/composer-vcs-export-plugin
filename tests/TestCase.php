@@ -7,6 +7,7 @@ namespace Tests;
 use Composer\Composer;
 use Composer\Config;
 use Composer\Installer\InstallationManager;
+use Composer\Installer\MetapackageInstaller;
 use Composer\Installer\NoopInstaller;
 use Composer\IO\NullIO;
 use Composer\Util\HttpDownloader;
@@ -25,6 +26,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $loop = new Loop($httpDownloader);
         $im = new InstallationManager($loop, new NullIO());
         $im->addInstaller(new NoopInstaller());
+        $im->addInstaller(new MetapackageInstaller(new NullIO()));
 
         $this->composer = new Composer();
         $this->composer->setConfig(new Config());

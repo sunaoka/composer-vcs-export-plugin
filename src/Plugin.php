@@ -103,8 +103,10 @@ class Plugin implements PluginInterface, EventSubscriberInterface
         }
 
         if ('git' === $package->getSourceType()) {
-            /** @var string $installPath The installation path is not null because it is executed by PackageEvents::POST_PACKAGE_INSTALL or PackageEvents::POST_PACKAGE_UPDATE */
             $installPath = $this->composer->getInstallationManager()->getInstallPath($package);
+            if ($installPath === null) {
+                return;
+            }
             $this->replaceWithGitArchive($package, $installPath);
         }
     }
