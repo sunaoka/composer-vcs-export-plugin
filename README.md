@@ -1,5 +1,11 @@
 # Composer VCS Export Plugin
 
+[![Latest](https://poser.pugx.org/sunaoka/composer-vcs-export-plugin/v)](https://packagist.org/packages/sunaoka/composer-vcs-export-plugin)
+[![License](https://poser.pugx.org/sunaoka/composer-vcs-export-plugin/license)](https://packagist.org/packages/sunaoka/composer-vcs-export-plugin)
+[![PHP](https://img.shields.io/packagist/php-v/sunaoka/composer-vcs-export-plugin)](composer.json)
+[![Test](https://github.com/sunaoka/composer-vcs-export-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/sunaoka/composer-vcs-export-plugin/actions/workflows/test.yml)
+[![codecov](https://codecov.io/github/sunaoka/composer-vcs-export-plugin/graph/badge.svg)](https://codecov.io/github/sunaoka/composer-vcs-export-plugin)
+
 ## Overview
 
 This Composer plugin ensures that when installing packages from VCS repositories (such as Git) via the `repositories` configuration, only the files allowed by `.gitattributes` `export-ignore` rules are placed in the `vendor` directory.  
