@@ -23,7 +23,13 @@ It enables clean, distribution-like installs even when directly referencing VCS 
 Add the plugin to your project using Composer:
 
 ```bash
-composer require sunaoka/composer-vcs-export-plugin
+composer require --dev sunaoka/composer-vcs-export-plugin
+```
+
+Or
+
+```bash
+composer global require sunaoka/composer-vcs-export-plugin
 ```
 
 ## Usage
