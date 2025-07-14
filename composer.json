@@ -1,7 +1,7 @@
 {
     "name": "sunaoka/composer-vcs-export-plugin",
     "description": "Exports Composer VCS repositories to vendor directories applying .gitattributes export-ignore rules.",
-    "keywords": ["php", "composer", "plugin", "vcs", "repositories", ".gitattributes", "export-ignore"],
+    "keywords": ["php", "composer", "plugin", "vcs", "repositories", ".gitattributes", "export-ignore", "dev"],
     "type": "composer-plugin",
     "license": "MIT",
     "authors": [
