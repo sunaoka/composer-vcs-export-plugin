@@ -8,7 +8,7 @@
 
 ## Overview
 
-This Composer plugin ensures that when installing packages from VCS repositories (such as Git) via the `repositories` configuration, only the files allowed by `.gitattributes` `export-ignore` rules are placed in the `vendor` directory.  
+This Composer plugin ensures that when installing packages from VCS repositories (such as Git) via the `repositories` configuration, only the files allowed by `.gitattributes` `export-ignore` rules are placed in the `vendor` directory.
 It enables clean, distribution-like installs even when directly referencing VCS sources, helping maintain a tidy `vendor/` with only the intended files from each package.
 
 ## Features
@@ -34,7 +34,7 @@ composer global require sunaoka/composer-vcs-export-plugin
 
 ## Usage
 
-No additional configuration is needed.  
+No additional configuration is needed.
 When you install or update packages from VCS repositories (e.g., via the `repositories` section in your `composer.json`), this plugin will:
 
 - Detect if the package was installed from a Git repository
@@ -59,7 +59,7 @@ When you install or update packages from VCS repositories (e.g., via the `reposi
     },
     "config": {
         "allow-plugins": {
-          "sunaoka/composer-vcs-export-plugin": true
+            "sunaoka/composer-vcs-export-plugin": true
         }
     }
 }
